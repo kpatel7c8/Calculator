@@ -8,12 +8,15 @@ const six = document.getElementById("six");
 const seven = document.getElementById("seven");
 const eight = document.getElementById("eight");
 const nine = document.getElementById("nine");
+const decimal = document.getElementById("decimal");
+
 const plus = document.getElementById("plus");
 const minus = document.getElementById("minus");
 const times = document.getElementById("times");
-const slash = document.getElementById("slash");
-const equalTo = document.getElementById("equalTo");
+const dividedBy = document.getElementById("dividedBy");
+const equalsTo = document.getElementById("equalsTo");
 const allClear = document.getElementById("allClear");
+const del = document.getElementById("del");
 const result = document.getElementById("result");
 const numKeys = document.querySelectorAll(".numKeys");
 const operationKeys = document.querySelectorAll(".numKeys");
@@ -28,27 +31,30 @@ six.addEventListener('click',writeNum);
 seven.addEventListener('click',writeNum); 
 eight.addEventListener('click',writeNum); 
 nine.addEventListener('click',writeNum);
+decimal.addEventListener('click',writeNum);
 
 plus.addEventListener('click',storeNumOne);
 plus.addEventListener('click',storeOperator);
 plus.addEventListener('click',reset);
+
 minus.addEventListener('click',storeNumOne);
 minus.addEventListener('click',storeOperator);
 minus.addEventListener('click',reset);
 times.addEventListener('click',storeNumOne);
 times.addEventListener('click',storeOperator);
 times.addEventListener('click',reset);
-slash.addEventListener('click',storeNumOne);
-slash.addEventListener('click',storeOperator);
-slash.addEventListener('click',reset);
+dividedBy.addEventListener('click',storeNumOne);
+dividedBy.addEventListener('click',storeOperator);
+dividedBy.addEventListener('click',reset);
 
-equalTo.addEventListener('click',storeNumTwo);
-equalTo.addEventListener('click',writeAnswer);
+equalsTo.addEventListener('click',storeNumTwo);
+equalsTo.addEventListener('click',writeAnswer);
 
 allClear.addEventListener('click',reset);
+del.addEventListener('click',deleeet);
 
 function writeNum(event) {
-    if(result.innerHTML == 'TO INFINITY AND BEYOND ...') {
+    if(result.innerHTML == 'INFINITY AND BEYOND ...') {
         result.innerHTML = event.target.innerHTML;
     }
     else {
@@ -73,10 +79,10 @@ function reset() {
 function storeNumTwo(event) {
     numTwo = parseFloat(result.innerHTML);
     console.log(numTwo);
-    
 }
 
 function writeAnswer() {
+    console.log('equalsTo');
     if(operator == 'plus') {
         result.innerHTML = numOne+numTwo;
     }
@@ -86,9 +92,9 @@ function writeAnswer() {
     else if(operator == 'times') {
         result.innerHTML = numOne*numTwo;
     }
-    else if(operator == 'slash') {
+    else if(operator == 'dividedBy') {
         if(numTwo == 0) {
-            result.innerHTML = 'TO INFINITY AND BEYOND ...'
+            result.innerHTML = 'INFINITY AND BEYOND ...'
         }
         else {
         result.innerHTML = numOne/numTwo;
@@ -97,4 +103,9 @@ function writeAnswer() {
     else {
         result.innerHTML = 'ERROR';
     }
+    console.log(result.innerHTML);
+}
+
+function deleeet() {
+    result.innerHTML = result.innerHTML.slice(0,-1);
 }
