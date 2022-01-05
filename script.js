@@ -57,6 +57,9 @@ function writeNum(event) {
     if(result.innerHTML == 'INFINITY AND BEYOND ...') {
         result.innerHTML = event.target.innerHTML;
     }
+    else if(result.innerHTML.includes('.') && event.target.innerHTML == '.') {
+            result.innerHTML = result.innerHTML;
+    }
     else {
         result.innerHTML = result.innerHTML + event.target.innerHTML;
     }
