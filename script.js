@@ -35,21 +35,14 @@ decimal.addEventListener('click',writeNum);
 
 plus.addEventListener('click',storeNumOne);
 plus.addEventListener('click',storeOperator);
-plus.addEventListener('click',reset);
-
 minus.addEventListener('click',storeNumOne);
 minus.addEventListener('click',storeOperator);
-minus.addEventListener('click',reset);
 times.addEventListener('click',storeNumOne);
 times.addEventListener('click',storeOperator);
-times.addEventListener('click',reset);
 dividedBy.addEventListener('click',storeNumOne);
 dividedBy.addEventListener('click',storeOperator);
-dividedBy.addEventListener('click',reset);
-
 equalsTo.addEventListener('click',storeNumTwo);
 equalsTo.addEventListener('click',writeAnswer);
-
 allClear.addEventListener('click',reset);
 del.addEventListener('click',deleeet);
 
@@ -71,17 +64,47 @@ function storeNumOne(event) {
 }
 
 function storeOperator(event) {
+    result.innerHTML = result.innerHTML + event.target.innerHTML;
     operator = event.target.id;
     console.log(operator);
 }
 
 function reset() {
     result.innerHTML = '';
+    console.clear();
+    numOne = undefined;
+    numTwo = undefined;
+    operator = undefined;
+    console.log(numOne);
+    console.log(numTwo);
+    console.log(operator);
 }
 
 function storeNumTwo(event) {
-    numTwo = parseFloat(result.innerHTML);
+    function signs() {
+        if(operator == 'plus') {
+            return '+';
+        }
+        else if(operator == 'minus') {
+            return '-';
+        }
+        else if(operator == 'times') {
+            return '*';
+        }
+        else {
+            return '/';
+        }
+    }
+    //to store the number after operator sign
+    if(result.innerHTML.includes(signs())) {
+        subString = result.innerHTML.split(signs());
+        numTwo = parseFloat(subString[1]);
+    }
+    else {
+        numTwo = parseFloat(result.innerHTML);
+    }    
     console.log(numTwo);
+
 }
 
 function writeAnswer() {

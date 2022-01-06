@@ -9,26 +9,36 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Calculator</h1>
-    <button id="zero" class="numKeys">0</button>
-    <button id="one" class="numKeys">1</button>
-    <button id="two" class="numKeys">2</button>
-    <button id="three" class="numKeys">3</button>
-    <button id="four" class="numKeys">4</button>
-    <button id="five" class="numKeys">5</button>
-    <button id="six" class="numKeys">6</button>
-    <button id="seven" class="numKeys">7</button>
-    <button id="eight" class="numKeys">8</button>
-    <button id="nine" class="numKeys">9</button>
-    <button id="decimal" class="numKeys">.</button>
-    <button id="plus" class="operationKeys">+</button>
-    <button id="minus" class="operationKeys">-</button>
-    <button id="times" class="operationKeys">*</button>
-    <button id="dividedBy" class="operationKeys">/</button>
-    <button id="equalsTo">=</button>
-    <button id="allClear">AC</button>
-    <button id="del">DEL</button>
-    <div><output id="result"></output></div>
-    
+    <div id="calculator">
+        <p id="result"></p>
+        <div id="input">
+            <div id="operationKeys">
+                <button id="plus" class="operationKeys">+</button>
+                <button id="minus" class="operationKeys">-</button>
+                <button id="times" class="operationKeys">*</button>
+                <button id="dividedBy" class="operationKeys">/</button>
+            </div>
+            <div id="numbersAndOthers">
+                <div id="leftSide">
+                    <button id="del">DEL</button>
+                    <button id="decimal" class="numKeys">.</button>
+                    <button id="zero" class="numKeys">0</button>
+                    <button id="one" class="numKeys">1</button>
+                    <button id="two" class="numKeys">2</button>
+                    <button id="three" class="numKeys">3</button>
+                    <button id="four" class="numKeys">4</button>
+                    <button id="five" class="numKeys">5</button>
+                    <button id="six" class="numKeys">6</button>
+                    <button id="seven" class="numKeys">7</button>
+                    <button id="eight" class="numKeys">8</button>
+                    <button id="nine" class="numKeys">9</button>
+                </div>
+                    <div id="rightSide">
+                    <button id="equalsTo">=</button>
+                    <button id="allClear">AC</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
