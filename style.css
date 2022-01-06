@@ -41,7 +41,7 @@ p {
 
 button {
     font-size: 125%;
-    font-weight: 700;
+    font-weight: lighter;
     width: 25%;
     display: flex;
     border-radius: 10%;
@@ -109,3 +109,16 @@ button {
     box-sizing:border-box;
 }   
 
+button:active {
+    animation-name: clicked;
+    animation-duration: 1s;
+}
+
+@keyframes clicked {
+    0%  {transform: scale(0.9);}
+    100% {transform: scale(1);}
+}
+
+button:hover {
+    font-weight: 600; 
+}
