@@ -83,7 +83,7 @@ button {
 
 #leftSide {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     width: 75%;
     flex-wrap: wrap;
     box-sizing:border-box;

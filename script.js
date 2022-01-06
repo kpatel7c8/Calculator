@@ -64,8 +64,14 @@ function storeNumOne(event) {
 }
 
 function storeOperator(event) {
-    result.innerHTML = result.innerHTML + event.target.innerHTML;
-    operator = event.target.id;
+    //do not store another operator if there is one stored already
+    if(result.innerHTML.includes('+')||result.innerHTML.includes('-')
+    ||result.innerHTML.includes('*')||result.innerHTML.includes('/')) {
+    }
+    else {
+        result.innerHTML = result.innerHTML + event.target.innerHTML;
+        operator = event.target.id;
+    }
     console.log(operator);
 }
 
