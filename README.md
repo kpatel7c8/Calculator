@@ -1,4 +1,6 @@
 # Calculator
+## Link: https://kpatel7c8.github.io/calculator/
+
 This is a calculator with basic functions.
 I spent a bit of time in figuring out a way to store button presses in a variable initially. Once that was done, the rest came together piece by piece but needed to go back and take on the challenge of showing the operation being done in the display for example _3*4_ but only storing 4 as the second number.
 Below are a few limitations:
